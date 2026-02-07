@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* Custom Repeating Background Pattern */
+  background-color: #fffaf0; /* A slightly off-white cream color */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f7931a' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3Cpath d='M0 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z' transform='translate(30 30)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-btn {
+  background: #ffb84d; /* A lighter orange */
+  border: 2px solid #000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000; /* Hard shadow */
+  transition: all 0.1s ease;
+  text-transform: capitalize;
+}
+
+.nav-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000;
+}
+
+.nav-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  /* Push down slightly to balance with navbar */
+  padding-top: 60px; 
+  position: relative;
+}
+
+/* Ensure the scroll arrow sits at the bottom */
+.scroll-arrow-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-logo-container {
+  width: 220px;        /* Much Bigger */
+  height: 220px;       /* Much Bigger */
+  background-color: #f7931a;
+  border-radius: 50%;
+  border: 5px solid black;
+  /* Deeper shadow for bigger object */
+  box-shadow: 12px 12px 0px black; 
+  margin-bottom: 25px;
+}
+
+.main-logo-text {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  /* A simple "NO" symbol representation */
+  text-decoration: line-through; 
+}
+
+/* TITLES */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  /* responsive clamping: minimum 4rem, preferred 15vw, max 9rem */
+  font-size: clamp(4rem, 15vw, 9rem); 
+  font-weight: 900;
+  font-style: italic;
+  color: #333;
+  line-height: 0.85; /* Tighter spacing so it looks like a logo block */
+  margin-bottom: 15px;
+  letter-spacing: -4px; /* Tight tracking for impact */
+  margin-top: 0;
+}
+
+.subtitle {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 800;
+  color: #f7931a;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px black; /* Tiny crisp shadow */
+}
+
+.description {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #f7931a;
+}
+
+/* HERO BUTTONS */
+.hero-btns {
+  display: flex;
+  justify-content: center; /* This forces the buttons to the middle */
+  align-items: center;
+  gap: 20px;
+  width: 100%; /* Spans the full width so justify-center works */
+  margin-top: 10px;
+  flex-wrap: wrap; /* Stacks them nicely on mobile */
+  z-index: 10;
+}
+
+.hero-btns a {
+  text-decoration: none;
+  display: flex; /* Makes the anchor behave like a block for the button */
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 40px; /* Slightly bigger for the new scale */
+  border: 4px solid #000; /* Thicker border to match hero */
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px #000; /* Hard shadow */
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+  white-space: nowrap; /* Prevents text from breaking */
+}
+
+.cta-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.cta-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000;
+}
+.btn-buy {
+  background: #ffc107; /* Yellow/Orange */
+}
+
+.btn-learn {
+  background: #00c853; /* Green */
+  color: white;
+}
+
+/* TIMELINE SECTION */
+.timeline-section {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-card {
+  background-color: #f7931a; /* Bitcoin Orange */
+  /* Diagonal Stripe Pattern */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+  border: 5px solid black;
+  width: 100%;
+  max-width: 1000px;
+  padding: 60px 40px;
+  position: relative;
+  box-shadow: 10px 10px 0px black; /* Hard retro shadow */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px; /* Slight rounding but mostly boxy */
+}
+
+/* The Black Line running through */
+.timeline-line {
+  position: absolute;
+  top: 38%; /* Aligns with the middle of circles */
+  left: 50px;
+  right: 50px;
+  height: 6px;
+  background: black;
+  z-index: 1;
+}
+
+/* Individual Items */
+.timeline-item {
+  position: relative;
+  z-index: 2; /* Sits on top of the line */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+/* Circles/Logos */
+.timeline-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid black;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.timeline-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Text Styles */
+.timeline-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: white;
+  text-transform: uppercase;
+  /* Thick black stroke effect for text */
+  text-shadow: 
+    3px 3px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Year Pill */
+.timeline-year {
+  background: #ffebd2; /* Off-white/cream */
+  border: 3px solid black;
+  padding: 5px 20px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  box-shadow: 3px 3px 0px black;
+  color: #000;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timeline-card {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .timeline-line {
+    width: 6px;
+    height: 80%;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+  }
+}
+
+/* WHAT IS NOCOIN SECTION */
+.what-is-section {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff; /* White text on cream bg needs a stroke or color change */
+  color: #f7931a; /* Using Orange for visibility */
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-shadow: 3px 3px 0px #000;
+  -webkit-text-stroke: 1.5px black;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Left side slightly wider */
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* LEFT MAIN CARD */
+.info-card {
+  background: white;
+  border: 3px solid black;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 8px 8px 0px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pill-badge {
+  background: #ffebd2;
+  border: 2px solid black;
+  padding: 5px 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.info-headline {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.info-bullets {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.info-bullets li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  font-weight: 500;
+  color: #222;
+}
+
+.info-bullets li::before {
+  content: "●";
+  color: #f7931a;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.tags-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+
+/* RIGHT SIDE CARDS */
+.right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forum-card {
+  background: white;
+  border: 3px solid black;
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px black;
+  overflow: hidden;
+}
+
+.forum-header {
+  background: #e0e0e0;
+  padding: 10px 20px;
+  border-bottom: 3px solid black;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forum-body {
+  padding: 20px;
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.mini-card {
+  background: white;
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 6px 6px 0px black;
+}
+
+.mini-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SOCIALS SECTION */
+.socials-section {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.socials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Spacing between the two big buttons */
+  width: 100%;
+  max-width: 800px;
+}
+
+/* THE WIDE SOCIAL CARD */
+.social-card {
+  background: white;
+  border: 4px solid black;
+  border-radius: 12px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  /* The "Orange Glow" Shadow Effect from the image */
+  box-shadow: 0 0 0 4px #f7931a, 8px 8px 0px black; 
+  transition: transform 0.1s ease;
+  text-decoration: none; /* For the anchor tag wrapping */
+}
+
+.social-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 0 0 0 4px #f7931a, 12px 12px 0px black;
+}
+
+.social-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 4px #f7931a, 4px 4px 0px black;
+}
+
+/* LEFT SIDE: ICON + TEXT */
+.social-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: #f0f0f0;
+}
+
+.social-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-platform {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.social-handle {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 700;
+}
+
+/* RIGHT SIDE: ACTION BUTTON */
+.action-pill {
+  background: #f7931a;
+  border: 3px solid black;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-weight: 900;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .social-card {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: stretch;
+  }
+  .social-left {
+    flex-direction: column;
+  }
+  .action-pill {
+    justify-content: center;
+  }
+}
+
+/* FOOTER CONTRACT SECTION */
+.footer-section {
+  width: 100%;
+  padding: 80px 20px 100px 20px; /* Extra bottom padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent; /* Lets the checkerboard show through */
+}
+
+/* OUTER WHITE CARD */
+.contract-card {
+  background: white;
+  border: 4px solid black;
+  border-radius: 16px;
+  padding: 30px 50px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.1); /* Subtle retro shadow */
+  margin-bottom: 30px;
+}
+
+/* "Solana Contract Address" Label */
+.contract-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #f7931a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* INNER ADDRESS BOX */
+.address-box {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: 'Courier New', monospace; /* Classic monospace font */
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  word-break: break-all; /* Prevents overflow on mobile */
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.address-box:hover {
+  background: #f9f9f9;
+}
+
+/* BOTTOM ORANGE TAGLINE */
+.footer-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #f7931a;
+  text-transform: uppercase;
+  text-align: center;
+  /* White stroke outline to make it pop against pattern */
+  text-shadow: 
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .contract-card {
+    padding: 20px;
+  }
+  .footer-tagline {
+    font-size: 1.1rem;
+  }
+  .address-box {
+    font-size: 0.85rem;
+  }
+}
